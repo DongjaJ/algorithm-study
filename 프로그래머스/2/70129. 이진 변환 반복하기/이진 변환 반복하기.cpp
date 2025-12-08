@@ -9,21 +9,20 @@ vector<int> solution(string s) {
     
     while(s != "1") {
         cnt++;
-        string tmp = "";
+        int len = 0;
         for(auto c: s) {
             if (c == '0'){
                 zeroCnt++;
-                continue;
+            } else {
+                len++;
             }
-            tmp += c;
         }
         
-        int l = tmp.size();
+        string tmp = "";
         
-        tmp = "";
-        while(l>0){
-            tmp += l % 2 + '0';
-            l /= 2;
+        while(len>0){
+            tmp += len % 2 + '0';
+            len /= 2;
         }
         s = tmp;
     }
